@@ -1,5 +1,7 @@
-README
-All the files have been grouped in folders: code, executables, experiments, data, storage, report.
+# db_data_stores: Simulate different record storage methods for a relational entity. 
+Records are assumed to be 10 bytes long and a tuple contains 100 records. 
+Experiments time the different storage logics for different page sizes. 
+Great for understanding the advantages of different stores!
 
 ==========================
 
@@ -41,6 +43,7 @@ DATA
 * For example, we inserted all the data in set 500 into the heapfile that included the dataset 2000.
 * These sample datasets were generated randomly and are included in the 'data' folder.
 
+gen.py: This file generates a random csv data file (check code signature to understand behaviour).
 
 ==========================
 
@@ -49,7 +52,10 @@ STORAGE
 
 ==========================
 
-REPORT
-A pdf under 'report', includes all the tables, charts and commentaries required by the experiments.
+DESCRIPTION OF SELECTS.
+* select selects a substring for an attribute from a heap oriented file.
+* select2 selects a substring attribute from a column oriented set of files.
+e.g. SELECT SUBSTRING(A, 1, 5) FROM T WHERE A >= start AND A <= end.
 
-==========================
+* select3 selects a substring for attribute B based on attribute A.
+e.g. SELECT SUBSTRING(B, 1, 5) FROM T WHERE A >= start AND A <= end, (lexicographically).
