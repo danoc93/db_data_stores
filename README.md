@@ -1,6 +1,6 @@
-# db_data_stores: Simulate different record storage methods for a relational entity.
+# db_data_stores
 
-==========================
+Simulate different record storage methods for a relational entity.
 
 Records are assumed to be 10 bytes long and a tuple contains 100 records. 
 Experiments time the different storage logics for different page sizes. 
